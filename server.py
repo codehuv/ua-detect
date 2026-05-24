@@ -4,6 +4,7 @@ User-Agent detection server.
 Same URL, different UI based on who's visiting.
 """
 
+import os
 import json
 import re
 import socketserver
@@ -11,7 +12,7 @@ from datetime import datetime
 from http.server import BaseHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
 
-PORT = 8080
+PORT = int(os.environ.get("PORT", 8080))
 
 # ── UA classification ─────────────────────────────────────────────────────────
 
